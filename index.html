@@ -51,8 +51,26 @@ ul li a.active {
 font-size:60px;
 transition: font-size 2s;
 }
+.row {
+  background-color: midnightblue;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+  display: flex;
+}
+button {
+  aspect-ratio: 1/1;
+  width: 90px;
+}
+
 </style>
 <title>Apples VS Bananas</title>
+<script>
+function myFunction(id) {
+  document.getElementById(id).innerHTML = "X"
+}
+</script>
+
 </head>
 <body> 
 <ul>
@@ -62,6 +80,8 @@ transition: font-size 2s;
 </ul>
 
 <body style="background-color:MidnightBlue;">
+  <p> </p>
+  <p> </p>
 <img src="./assets/apple.png" alt="apple icon" width="150" height="142">
 <img src="./assets/banana.png" style="float:right" alt="banana icon" width="150" height="142">
 <h1 class="apple animation"><div>Apples</div></h1>
@@ -75,32 +95,28 @@ id="text">Wikipedia page about apples!</a><br><br>
 </div>
   <div><p class="banana">Bananas?</p>
     <a href="https://en.wikipedia.org/wiki/Banana" 
->Wikipedia page about bananas</a>  <br><br>
+>Wikipedia page about bananas!</a>  <br><br>
     A banana is an elongated, edible fruit that is botanically a berry[1] produced by several kinds of large treelike herbaceous flowering plants in the genus Musa. In some countries, cooking bananas are called plantains, distinguishing them from dessert bananas. The fruit is variable in size, color and firmness, but is usually elongated and curved, with soft flesh rich in starch covered with a peel, which may have a variety of colors when ripe. It grows upward in clusters near the top of the plant. Almost all modern edible seedless (parthenocarp) cultivated bananas come from two wild species – Musa acuminata and Musa balbisiana, or their hybrids.</p>
 </div>
 </div>
-<h3><i>Introducing...</i></h3> 
-<p class="apple animation"><div>Apples?</div></p>
-<a href="https://en.wikipedia.org/wiki/Apple" 
-id="text">Wikipedia page about apples!</a>
+<h3><i>Battle!</i></h3> 
+<a href="https://en.wikipedia.org/wiki/Apple"></a>
 
-<p id="text">An apple is the round, edible fruit of an apple tree (Malus spp.). Fruit trees of the orchard or domestic apple (Malus domestica), the most widely grown in the genus, are cultivated worldwide. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found. Apples have been grown for thousands of years in Eurasia before they were introduced to the American continent by European colonists. Apples have cultural significance in many mythologies (including Norse and Greek) and religions (such as Christianity in Europe). <br><br>
-
-Apples grown from seeds tend to be very different from those of their parents, and the resultant fruit frequently lacks desired characteristics. For commercial purposes, including botanical evaluation, apple cultivars are propagated by clonal grafting onto rootstocks. Apple trees grown without rootstocks tend to be larger and much slower to fruit after planting. Rootstocks are used to control the speed of growth and the size of the resulting tree, allowing for easier harvesting.<br><br>
-
-There are more than 7,500 cultivars of apples. Different cultivars are bred for various tastes and uses, including cooking, eating raw, and cider or apple juice production. Trees and fruit are prone to fungal, bacterial, and pest problems, which can be controlled by a number of organic and non-organic means. In 2010, the fruit's genome was sequenced as part of research on disease control and selective breeding in apple production.</p>
-
-<p class="banana">Bananas?</p>
-<a href="https://en.wikipedia.org/wiki/Banana" 
->Wikipedia page about bananas</a>
-<p>A banana is an elongated, edible fruit that is botanically a berry[1] produced by several kinds of large treelike herbaceous flowering plants in the genus Musa. In some countries, cooking bananas are called plantains, distinguishing them from dessert bananas. The fruit is variable in size, color and firmness, but is usually elongated and curved, with soft flesh rich in starch covered with a peel, which may have a variety of colors when ripe. It grows upward in clusters near the top of the plant. Almost all modern edible seedless (parthenocarp) cultivated bananas come from two wild species – Musa acuminata and Musa balbisiana, or their hybrids.</p>
-
-
-<hr>
-<h3><i>Nutrition Battle</i></h3> 
-<p class="apple">Apples</p>
-<p class="banana">Bananas</p>
-
+<div class="row">
+  <div><button id="a1" onclick="myFunction(id)"></button></div>
+  <div><button id="b1" onclick="myFunction(id)"></button></div>
+  <div><button id="c1" onclick="myFunction(id)"></button></div>
+</div>
+<div class="row">
+  <div><button id="a2" onclick="myFunction(id)"></button></div>
+  <div><button id="b2" onclick="myFunction(id)"></button></div>
+  <div><button id="c2" onclick="myFunction(id)"></button></div>
+</div>
+<div class="row">
+  <div><button id="3" onclick="myFunction(id)"></button></div>
+  <div><button id="b3" onclick="myFunction(id)"></button></div>
+  <div><button id="c3" onclick="myFunction(id)"></button></div>
+</div>
 
 </body>
 </html>
