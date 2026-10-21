@@ -58,9 +58,20 @@ transition: font-size 2s;
   font-size: 30px;
   display: flex;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
 button {
   aspect-ratio: 1/1;
   width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 </style>
@@ -94,25 +105,27 @@ id="text">Wikipedia page about apples!</a><br><br>
 >Wikipedia page about bananas!</a>  <br><br>
     A banana is an elongated, edible fruit that is botanically a berry[1] produced by several kinds of large treelike herbaceous flowering plants in the genus Musa. In some countries, cooking bananas are called plantains, distinguishing them from dessert bananas. The fruit is variable in size, color and firmness, but is usually elongated and curved, with soft flesh rich in starch covered with a peel, which may have a variety of colors when ripe. It grows upward in clusters near the top of the plant. Almost all modern edible seedless (parthenocarp) cultivated bananas come from two wild species – Musa acuminata and Musa balbisiana, or their hybrids.</p>
 </div>
+
 </div>
-<h3><i id="titletxt">Battle!</i></h3> 
+<div id="resetspot"></div>
+<h3 class="center"><i id="titletxt">Battle!</i></h3> 
 <a href="https://en.wikipedia.org/wiki/Apple"></a>
 
-<div class="row">
+<div><div class="row center">
   <div><button id="a1" onclick="myFunction(id,0)"></button></div>
   <div><button id="b1" onclick="myFunction(id,1)"></button></div>
   <div><button id="c1" onclick="myFunction(id,2)"></button></div>
 </div>
-<div class="row">
+<div class="row center">
   <div><button id="a2" onclick="myFunction(id,3)"></button></div>
   <div><button id="b2" onclick="myFunction(id,4)"></button></div>
   <div><button id="c2" onclick="myFunction(id,5)"></button></div>
 </div>
-<div class="row">
-  <div><button id="3" onclick="myFunction(id,6)"></button></div>
+<div class="row center">
+  <div><button id="a3" onclick="myFunction(id,6)"></button></div>
   <div><button id="b3" onclick="myFunction(id,7)"></button></div>
   <div><button id="c3" onclick="myFunction(id,8)"></button></div>
-</div>
+</div></div>
 
 </body>
 </html>
