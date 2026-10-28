@@ -1,3 +1,4 @@
+//#region tic tac toe
 let turn = true;
 
 let gameover = false;
@@ -138,3 +139,53 @@ function myFunction(id,position) {
   turn = !turn;
   console.log(turn);
 }
+//#endregion 
+
+//#region memory game
+const delay=(ms)=>new Promise(resolve=>setTimeout(resolve,ms));
+let memorylist=[];
+let listening=true;
+function memorybutton(number) {
+    if (listening==false) {
+        return;
+    }
+    memorylist.push(number);
+    console.log(memorylist);
+    showbotmoves();
+    //displaycolors(number);
+}
+async function showbotmoves() {
+    for (const move of memorylist){
+        await displaycolors(move);
+        await delay(1000);
+    }
+}
+async function displaycolors(number){
+    let id="";
+
+    if (number==1){
+        id="m2";
+        document.getElementById(id).style.backgroundColor="rgb(0, 255, 255)";
+        await delay(2000);
+        document.getElementById(id).style.backgroundColor="rgb(34, 179, 179)";
+        }
+    if (number==2){
+        id="m4";
+        document.getElementById(id).style.backgroundColor="rgb(128, 255, 0)";
+        await delay(2000);
+        document.getElementById(id).style.backgroundColor="rgb(98, 170, 25)";
+    }
+    if (number==3){
+        id="m6";
+        document.getElementById(id).style.backgroundColor="rgb(255, 0, 98)";
+        await delay(2000);
+        document.getElementById(id).style.backgroundColor="rgb(129, 27, 66)";
+    }
+    if (number==4){
+        id="m8";
+        document.getElementById(id).style.backgroundColor="rgb(255, 98, 0)";
+        await delay(2000);
+        document.getElementById(id).style.backgroundColor="rgb(190, 79, 38)";
+    }
+}
+//#endregion

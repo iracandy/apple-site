@@ -1,0 +1,76 @@
+p {
+color:white;
+font-family:Arial;}
+h1 {color:white; text-align:center; font-family:Arial;margin: 0px;}
+h2 {color:white;text-align:center;margin: 0px;}
+h3 {color:white}
+.apple {color:red; font-family:'Franklin Gothic Medium';
+transition:width 0.5s, background-color 1s;}
+.banana {color: yellow;font-family:'Franklin Gothic Medium'}
+a {color:midnightblue}
+.container {
+    display: flex;
+    background-color: MidnightBlue(255, 255, 255)
+}
+.container div {
+    background-color: rgb(236, 213, 180);
+    margin: 80px;
+    color: midnightblue;
+    padding: 20px;
+    font-family: Arial;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(7, 6, 59);
+}
+ul li {
+  float: left;
+}
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ul li a:hover {
+  background-color:  rgb(14, 12, 112);
+}
+ul li a.active {
+  background-color: #0486aa;
+}
+
+.animation:hover {
+font-size:60px;
+transition: font-size 2s;
+}
+.row {
+  background-color: midnightblue;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+  display: flex;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+button {
+  aspect-ratio: 1/1;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.memoryinvbox {
+    background-color: #04aa1200;
+    border-color: #04aa1200;
+}

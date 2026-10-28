@@ -1,80 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-p {
-color:white;
-font-family:Arial;}
-h1 {color:white; text-align:center; font-family:Arial;margin: 0px;}
-h2 {color:white;text-align:center;margin: 0px;}
-h3 {color:white}
-.apple {color:red; font-family:'Franklin Gothic Medium';
-transition:width 0.5s, background-color 1s;}
-.banana {color: yellow;font-family:'Franklin Gothic Medium'}
-a {color:midnightblue}
-.container {
-    display: flex;
-    background-color: MidnightBlue(255, 255, 255)
-}
-.container div {
-    background-color: rgb(236, 213, 180);
-    margin: 80px;
-    color: midnightblue;
-    padding: 20px;
-    font-family: Arial;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(7, 6, 59);
-}
-ul li {
-  float: left;
-}
-ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-ul li a:hover {
-  background-color:  rgb(14, 12, 112);
-}
-ul li a.active {
-  background-color: #0486aa;
-}
-
-.animation:hover {
-font-size:60px;
-transition: font-size 2s;
-}
-.row {
-  background-color: midnightblue;
-  margin: 0px;
-  padding: 0px;
-  font-size: 30px;
-  display: flex;
-}
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-button {
-  aspect-ratio: 1/1;
-  width: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-</style>
+  <link rel='stylesheet' type="text/css" href='style.css'>
 <title>Apples VS Bananas</title>
 <script src="myscript.js"> </script>
 
@@ -108,7 +35,7 @@ id="text">Wikipedia page about apples!</a><br><br>
 
 </div>
 <div id="resetspot"></div>
-<h3 class="center"><i id="titletxt">Battle!</i></h3> 
+<h3 class="center"><i id="titletxt">Tic Tac Toe Battle!</i></h3> 
 <a href="https://en.wikipedia.org/wiki/Apple"></a>
 
 <div><div class="row center">
@@ -127,7 +54,27 @@ id="text">Wikipedia page about apples!</a><br><br>
   <div><button id="c3" onclick="myFunction(id,8)"></button></div>
 </div></div>
 
+<p> - </p>
+
+<h3 class="center"><i id="titletxt">Memory Battle!</i></h3> 
+
+<div><div class="row center">
+  <div><button class="memoryinvbox" id="m1" onclick=""></button></div>
+  <div><button id="m2" onclick="memorybutton(1)" style="background-color:rgb(34, 179, 179);"></button></div>
+  <div><button class="memoryinvbox" id="m3" onclick=""></button></div>
+</div>
+<div class="row center">
+  <div><button id="m4" onclick="memorybutton(2)" style="background-color:rgb(98, 170, 25);"></button></div>
+  <div><button class="memoryinvbox" id="m5" onclick=""></button></div>
+  <div><button id="m6" onclick="memorybutton(3)" style="background-color:rgb(129, 27, 66);"></button></div>
+</div>
+<div class="row center">
+  <div><button class="memoryinvbox" id="m7" onclick=""></button></div>
+  <div><button id="m8" onclick="memorybutton(4)" style="background-color:rgb(209, 76, 27);"></button></div>
+  <div><button class="memoryinvbox" id="m9" onclick=""></button></div>
+</div></div>
+
+
+
 </body>
 </html>
-
-
