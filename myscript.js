@@ -143,49 +143,84 @@ function myFunction(id,position) {
 
 //#region memory game
 const delay=(ms)=>new Promise(resolve=>setTimeout(resolve,ms));
+
 let memorylist=[];
+let inputlist=[];
 let listening=true;
 function memorybutton(number) {
     if (listening==false) {
         return;
     }
-    memorylist.push(number);
-    console.log(memorylist);
-    showbotmoves();
-    //displaycolors(number);
+    inputlist.push(number);
+    displaycolors(number,100);
+    if (inputlist.length>=memorylist.length) {
+        showbotmoves();
+    }
+   
 }
 async function showbotmoves() {
-    for (const move of memorylist){
-        await displaycolors(move);
-        await delay(1000);
+    listening=false;
+    document.getElementById("m5").innerHTML = "Wait...";
+    let equal=true;
+    for (let i=0; i<inputlist.length; i++) {
+        if (inputlist[i]!=memorylist[i]){
+            equal=false;
+        } 
     }
+    
+    /*console.log(equal); 
+    console.log(memorylist);
+    console.log(inputlist);*/
+    document.getElementById("memoryscore").innerHTML = "Score: "+memorylist.length;
+    if (equal==false){
+        if (memorylist.length>0){
+            document.getElementById("m5").innerHTML = "Incorrect! Restart";
+        }
+        memorylist=[];
+    }
+    //if wrong reset memory list
+    inputlist=[];
+    let randomnumber = Math.floor(Math.random()*4)+1;
+    memorylist.push(randomnumber);
+    for (const move of memorylist){
+        await displaycolors(move,1000);
+        await delay(100);
+    }
+    document.getElementById("m5").innerHTML = "";
+    listening=true;
 }
-async function displaycolors(number){
+async function displaycolors(number,length){
     let id="";
 
     if (number==1){
         id="m2";
-        document.getElementById(id).style.backgroundColor="rgb(0, 255, 255)";
-        await delay(2000);
-        document.getElementById(id).style.backgroundColor="rgb(34, 179, 179)";
+        document.getElementById(id).style.backgroundColor="#00ffff";
+        await delay(length);
+        document.getElementById(id).style.backgroundColor="#188181";
         }
     if (number==2){
         id="m4";
         document.getElementById(id).style.backgroundColor="rgb(128, 255, 0)";
-        await delay(2000);
-        document.getElementById(id).style.backgroundColor="rgb(98, 170, 25)";
+        await delay(length);
+        document.getElementById(id).style.backgroundColor="#467a12";
     }
     if (number==3){
         id="m6";
         document.getElementById(id).style.backgroundColor="rgb(255, 0, 98)";
-        await delay(2000);
-        document.getElementById(id).style.backgroundColor="rgb(129, 27, 66)";
+        await delay(length);
+        document.getElementById(id).style.backgroundColor="#5e1430";
     }
     if (number==4){
         id="m8";
         document.getElementById(id).style.backgroundColor="rgb(255, 98, 0)";
-        await delay(2000);
-        document.getElementById(id).style.backgroundColor="rgb(190, 79, 38)";
+        await delay(length);
+        document.getElementById(id).style.backgroundColor="#963e1e";
     }
 }
+//#endregion
+
+//#region snake game
+
+//snakegrid
+
 //#endregion

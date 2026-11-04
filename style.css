@@ -73,4 +73,11 @@ button {
 .memoryinvbox {
     background-color: #04aa1200;
     border-color: #04aa1200;
+    color: white;
+    font-weight:600;
+}
+
+.gridbutton {
+  aspect-ratio: 1/1;
+  width: 10px;
 }
