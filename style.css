@@ -79,5 +79,9 @@ button {
 
 .gridbutton {
   aspect-ratio: 1/1;
-  width: 10px;
+  width: 40px;
+  display: flex;
+  background-color: #87d45a;
+  border-color: #5eff00;
+
 }

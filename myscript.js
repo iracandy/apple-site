@@ -222,5 +222,68 @@ async function displaycolors(number,length){
 //#region snake game
 
 //snakegrid
+let newdiv=null;
+let map=[[]];
+let headx=0;
+let heady=0;
+let direction="right";
+for(let i=0; i<10; i++){
+    newdiv= document.createElement("div");
+    newdiv.classList.add('row');
+    document.getElementById("snakegrid").appendChild(newdiv);
+    map[i]=[];
+    for(let j=0; j<10; j++){
+        let myButton = document.createElement("button");
+        map[i][j]=myButton;
+        myButton.id=i+","+j;
+        myButton.classList.add('gridbutton');
+        newdiv.appendChild(myButton);
+    }
+}
+console.log(map);
+function resetsnake(button){
+    headx=0;
+    heady=0;
+    button.remove();
+    update();
+}
+async function update() {
+    //update code
+    console.log('update');
+    map[headx][heady].style.backgroundColor = "#87d45a";
+    if (direction="left"){
+        headx-=1;
+        //
+    }
+    if (direction="right"){
+        headx+=1;
+    }
+    if (direction="down"){
+        heady-=1;
+        //
+    }
+    if (direction="up"){
+        heady+=1;
+    }
+    if (headx>9 || heady>9 || headx<0 || heady<0){
+        document.getElementById("snakescore").innerHTML = "Game over!";
+        let myButton = document.createElement("button");
+        myButton.textContent = "Reset";
+        myButton.style.color = "Black";
+        myButton.style.fontSize = "20px";
+        myButton.style.fontWeight = "Bold";
+        myButton.style.background = "Red";
+        myButton.style.width = "100px";
+        myButton.style.aspectRatio = "3/1";
+        document.getElementById("snakeresetspot").appendChild(myButton);
+        myButton.addEventListener("click",(event)=>resetsnake(myButton))
+        return;
+    }
+    map[headx][heady].style.backgroundColor = "red";
+    
+    await delay(300);
+    update();
+}
+update();
 
 //#endregion
