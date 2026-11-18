@@ -226,7 +226,12 @@ let newdiv=null;
 let map=[[]];
 let headx=0;
 let heady=0;
+let fruitx=5;
+let fruity=3;
+let score=0;
 let direction="right";
+let previousx=[];
+let previousy=[];
 for(let i=0; i<10; i++){
     newdiv= document.createElement("div");
     newdiv.classList.add('row');
@@ -242,28 +247,56 @@ for(let i=0; i<10; i++){
 }
 console.log(map);
 function resetsnake(button){
+    console.log("resetsnake")
     headx=0;
     heady=0;
+    document.getElementById("snakescore").innerHTML = "Score: 0";
     button.remove();
+    direction="right";
+    score=0;
     update();
 }
+
+document.addEventListener("keydown",(event) => {
+    if (event.key==="ArrowUp" && direction != "down"){
+        direction="up"
+        event.preventDefault();
+    }
+    if (event.key==="ArrowDown" && direction != "up"){
+        direction="down"
+        event.preventDefault();
+    }
+    if (event.key==="ArrowLeft" && direction != "right"){
+        direction="left"
+    }
+    if (event.key==="ArrowRight" && direction != "left"){
+        direction="right"
+    }
+})
+
 async function update() {
     //update code
     console.log('update');
-    map[headx][heady].style.backgroundColor = "#87d45a";
-    if (direction="left"){
+    for (i=0;i<previousx.length;i++){
+    map[previousy[i]][previousx[i]].style.backgroundColor = "#87d45a";
+    }
+    map[heady][headx].style.backgroundColor = "#87d45a";
+    map[fruity][fruitx].style.backgroundColor = "#87d45a";
+    previousx.push(headx);
+    previousy.push(heady);
+    if (direction=="left"){
         headx-=1;
         //
     }
-    if (direction="right"){
+    if (direction=="right"){
         headx+=1;
     }
-    if (direction="down"){
-        heady-=1;
+    if (direction=="down"){
+        heady+=1;
         //
     }
-    if (direction="up"){
-        heady+=1;
+    if (direction=="up"){
+        heady-=1;
     }
     if (headx>9 || heady>9 || headx<0 || heady<0){
         document.getElementById("snakescore").innerHTML = "Game over!";
@@ -276,11 +309,28 @@ async function update() {
         myButton.style.width = "100px";
         myButton.style.aspectRatio = "3/1";
         document.getElementById("snakeresetspot").appendChild(myButton);
-        myButton.addEventListener("click",(event)=>resetsnake(myButton))
+        myButton.addEventListener("click",(event)=>resetsnake(myButton));
         return;
     }
-    map[headx][heady].style.backgroundColor = "red";
-    
+    if (headx==fruitx && heady==fruity){
+        score++;
+        document.getElementById("snakescore").innerHTML = "Score: "+score;
+        fruitx = Math.floor(Math.random()*10);
+        fruity = Math.floor(Math.random()*10);
+    } else {
+        previousx.shift();
+        previousy.shift();
+    }
+    console.log(previousx);
+    console.log(previousy);
+    for (i=0;i<previousx.length;i++){
+        map[previousy[i]][previousx[i]].style.backgroundColor = "#fa5555";
+    }
+
+    map[heady][headx].style.backgroundColor = "red";
+    map[fruity][fruitx].style.backgroundColor = "#dcc321";
+    console.log(headx);
+    console.log(direction);
     await delay(300);
     update();
 }
